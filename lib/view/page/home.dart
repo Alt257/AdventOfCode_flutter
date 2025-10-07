@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 final class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,7 +12,7 @@ final class HomePage extends StatelessWidget {
           children: [
             Text('COUCOU!!'),
             ElevatedButton(
-              onPressed: () => Navigator.of(context).pushNamed('/puzzle/year/2025/day/1'),
+              onPressed: () => context.go('/puzzle?year=2025&day=1'),
               child: Text('2025 day 1'),
             ),
           ],
