@@ -11,6 +11,7 @@ sealed class Environment {
     } catch (e) {
       throw Exception('Error loading env file: $e');
     }
+    _map = dotenv.env;
   }
 
   static bool isDefined(String key) => _map.containsKey(key) && _map[key] != null;
