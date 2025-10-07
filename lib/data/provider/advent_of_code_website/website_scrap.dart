@@ -7,6 +7,7 @@ part 'dto.dart';
 final class AdventOfCodeWebsiteDataProvider {
   final String url;
   final http = Dio();
+
   AdventOfCodeWebsiteDataProvider(): url = 'https://adventofcode.com' {
     http.interceptors..add(InterceptorProvider.authentication)
                      // ..add(LogInterceptor())

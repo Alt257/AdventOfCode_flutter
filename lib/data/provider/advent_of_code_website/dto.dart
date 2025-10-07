@@ -1,4 +1,4 @@
-part of 'website_call.dart';
+part of 'website_scrap.dart';
 
 
 final class AdventOfCodeWebsite_getDescription_response {
