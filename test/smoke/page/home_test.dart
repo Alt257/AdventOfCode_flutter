@@ -8,7 +8,6 @@
 
 
 import 'package:advent_of_code/app.dart';
-import 'package:advent_of_code/main.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
