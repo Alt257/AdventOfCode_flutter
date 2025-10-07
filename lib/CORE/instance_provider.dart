@@ -2,10 +2,10 @@ sealed class InstanceProvider {
 
   static final _interceptors = <String, dynamic>{};
 
-  static T getInstance<T>(T Function() builder) {
-    final key = builder.runtimeType.toString();
+  static T getInstance<T>(T Function() constructor) {
+    final key = constructor.runtimeType.toString();
     if(!_interceptors.containsKey(key)) {
-      _interceptors.addAll({key: builder()});
+      _interceptors.addAll({key: constructor()});
     }
     return _interceptors[key]!;
   }
