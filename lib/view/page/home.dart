@@ -7,7 +7,15 @@ final class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
       body: Center(
-        child: Text('COUCOU!!'),
+        child: Column(
+          children: [
+            Text('COUCOU!!'),
+            ElevatedButton(
+              onPressed: () => Navigator.of(context).pushNamed('/puzzle/year/2025/day/1'),
+              child: Text('2025 day 1'),
+            ),
+          ],
+        ),
       ),
     ));
   }
