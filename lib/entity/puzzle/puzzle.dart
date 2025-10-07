@@ -8,11 +8,4 @@ abstract class Puzzle with _$Puzzle {
     required String description,
     required String input,
   }) = _Puzzle;
-
-  factory Puzzle.fromJson({
-    required Map<String, dynamic> json,
-  }) => Puzzle(
-      description: json['desc'],
-      input: json['data'],
-  );
 }
