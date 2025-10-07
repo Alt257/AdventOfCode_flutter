@@ -1,4 +1,5 @@
-import 'package:advent_of_code/data/provider/advent_of_code_website/website_call.dart';
+import 'package:advent_of_code/data/provider/advent_of_code_website/website_scrap.dart';
+import 'package:advent_of_code/dotenv.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 extension on String {
@@ -8,6 +9,8 @@ extension on String {
 }
 
 Future<void> main() async {
+  await Environment.load();
+  final puzzleProvider = AdventOfCodeWebsiteDataProvider();
 
   const description = {
     2024: {
@@ -1055,7 +1058,6 @@ Future<void> main() async {
     },
   };
 
-  final puzzleProvider = AdventOfCodeWebsiteDataProvider();
 
   group('2024/day/1', () {
     final year = 2024;
