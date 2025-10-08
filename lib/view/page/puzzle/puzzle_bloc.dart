@@ -1,4 +1,5 @@
 import 'package:advent_of_code/data/repository/puzzle/i_puzzle_repository.dart';
+import 'package:advent_of_code/entity/puzzle/puzzle.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -14,8 +15,18 @@ class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
   }) : _puzzleRepository = puzzleRepository,
   super(const PuzzleState.initial()) {
 
-    on<PuzzleEvent>((event, emit) {
-      // TODO: implement event handler
+    on<_Loaded>((event, emit) async {
+      emit(PuzzleState.loading());
+      try {
+        emit(PuzzleState.loadSuccess(
+          puzzle: await _puzzleRepository.find(
+            year: event.year,
+            day: event.day,
+          ),
+        ));
+      } catch(e) {
+        emit(PuzzleState.loadError('impossible de charger le puzzle ${event.year} jour ${event.day}'));
+      }
     });
   }
 }
