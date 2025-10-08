@@ -16,8 +16,8 @@ final class HomePage extends StatelessWidget {
         padding: EdgeInsetsGeometry.symmetric(horizontal: 20, vertical: 20),
         child: GridView.extent(
           maxCrossAxisExtent: 100,
-          mainAxisSpacing: 20,
-          crossAxisSpacing: 20,
+          mainAxisSpacing: 12,
+          crossAxisSpacing: 12,
           children: [for(var i = 1; i <= 25; i++) _buildPuzzleButton(context, year: 2024, day: i)],
         ),
       ),
