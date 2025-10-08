@@ -12,18 +12,20 @@ final class HomePage extends StatelessWidget {
         centerTitle: true,
       ),
 
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          spacing: 36,
-          children: [
-            ElevatedButton(
-              onPressed: () => context.go('/puzzle?year=2025&day=1'),
-              child: Text('2025 day 1'),
-            ),
-          ],
+      body: Padding(
+        padding: EdgeInsetsGeometry.symmetric(horizontal: 20, vertical: 20),
+        child: GridView.extent(
+          maxCrossAxisExtent: 100,
+          mainAxisSpacing: 20,
+          crossAxisSpacing: 20,
+          children: [for(var i = 1; i <= 25; i++) _buildPuzzleButton(context, year: 2025, day: i)],
         ),
       ),
     ));
   }
+
+  _buildPuzzleButton(BuildContext context, {required int year, required int day}) => ElevatedButton(
+    onPressed: () => context.go('/puzzle?year=$year&day=$day'),
+    child: Text('$year day $day'),
+  );
 }
