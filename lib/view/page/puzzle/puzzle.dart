@@ -38,8 +38,13 @@ final class PuzzlePage extends StatelessWidget {
             leading: IconButton(onPressed: () => context.go('/home'), icon: Icon(Icons.arrow_back)),
           ),
 
-          body: Center(
-            child: Text(state.puzzle.description),
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Center(
+                child: Text(state.puzzle.description),
+              ),
+            ),
           ),
         )),
       ),
