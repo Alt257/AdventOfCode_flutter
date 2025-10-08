@@ -13,6 +13,8 @@ final class AocPuzzleRepository implements IPuzzleRepository {
     final getDescriptionResponse = await _aocWebsite.getDescription(year: year, day: day);
     final getInputResponse = await _aocWebsite.getInput(year: year, day: day);
     return Puzzle(
+      year: year,
+      day: day,
       description: getDescriptionResponse.description,
       input: getInputResponse.input,
     );

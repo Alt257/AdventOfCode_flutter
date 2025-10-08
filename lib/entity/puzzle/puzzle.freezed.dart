@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Puzzle {
 
- String get description; String get input;
+ int get year; int get day; String get description; String get input;
 /// Create a copy of Puzzle
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $PuzzleCopyWith<Puzzle> get copyWith => _$PuzzleCopyWithImpl<Puzzle>(this as Puz
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Puzzle&&(identical(other.description, description) || other.description == description)&&(identical(other.input, input) || other.input == input));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Puzzle&&(identical(other.year, year) || other.year == year)&&(identical(other.day, day) || other.day == day)&&(identical(other.description, description) || other.description == description)&&(identical(other.input, input) || other.input == input));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,description,input);
+int get hashCode => Object.hash(runtimeType,year,day,description,input);
 
 @override
 String toString() {
-  return 'Puzzle(description: $description, input: $input)';
+  return 'Puzzle(year: $year, day: $day, description: $description, input: $input)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $PuzzleCopyWith<$Res>  {
   factory $PuzzleCopyWith(Puzzle value, $Res Function(Puzzle) _then) = _$PuzzleCopyWithImpl;
 @useResult
 $Res call({
- String description, String input
+ int year, int day, String description, String input
 });
 
 
@@ -62,9 +62,11 @@ class _$PuzzleCopyWithImpl<$Res>
 
 /// Create a copy of Puzzle
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? description = null,Object? input = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? year = null,Object? day = null,Object? description = null,Object? input = null,}) {
   return _then(_self.copyWith(
-description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+year: null == year ? _self.year : year // ignore: cast_nullable_to_non_nullable
+as int,day: null == day ? _self.day : day // ignore: cast_nullable_to_non_nullable
+as int,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,input: null == input ? _self.input : input // ignore: cast_nullable_to_non_nullable
 as String,
   ));
@@ -151,10 +153,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String description,  String input)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int year,  int day,  String description,  String input)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Puzzle() when $default != null:
-return $default(_that.description,_that.input);case _:
+return $default(_that.year,_that.day,_that.description,_that.input);case _:
   return orElse();
 
 }
@@ -172,10 +174,10 @@ return $default(_that.description,_that.input);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String description,  String input)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int year,  int day,  String description,  String input)  $default,) {final _that = this;
 switch (_that) {
 case _Puzzle():
-return $default(_that.description,_that.input);case _:
+return $default(_that.year,_that.day,_that.description,_that.input);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -192,10 +194,10 @@ return $default(_that.description,_that.input);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String description,  String input)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int year,  int day,  String description,  String input)?  $default,) {final _that = this;
 switch (_that) {
 case _Puzzle() when $default != null:
-return $default(_that.description,_that.input);case _:
+return $default(_that.year,_that.day,_that.description,_that.input);case _:
   return null;
 
 }
@@ -207,9 +209,11 @@ return $default(_that.description,_that.input);case _:
 
 
 class _Puzzle implements Puzzle {
-  const _Puzzle({required this.description, required this.input});
+  const _Puzzle({required this.year, required this.day, required this.description, required this.input});
   
 
+@override final  int year;
+@override final  int day;
 @override final  String description;
 @override final  String input;
 
@@ -223,16 +227,16 @@ _$PuzzleCopyWith<_Puzzle> get copyWith => __$PuzzleCopyWithImpl<_Puzzle>(this, _
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Puzzle&&(identical(other.description, description) || other.description == description)&&(identical(other.input, input) || other.input == input));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Puzzle&&(identical(other.year, year) || other.year == year)&&(identical(other.day, day) || other.day == day)&&(identical(other.description, description) || other.description == description)&&(identical(other.input, input) || other.input == input));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,description,input);
+int get hashCode => Object.hash(runtimeType,year,day,description,input);
 
 @override
 String toString() {
-  return 'Puzzle(description: $description, input: $input)';
+  return 'Puzzle(year: $year, day: $day, description: $description, input: $input)';
 }
 
 
@@ -243,7 +247,7 @@ abstract mixin class _$PuzzleCopyWith<$Res> implements $PuzzleCopyWith<$Res> {
   factory _$PuzzleCopyWith(_Puzzle value, $Res Function(_Puzzle) _then) = __$PuzzleCopyWithImpl;
 @override @useResult
 $Res call({
- String description, String input
+ int year, int day, String description, String input
 });
 
 
@@ -260,9 +264,11 @@ class __$PuzzleCopyWithImpl<$Res>
 
 /// Create a copy of Puzzle
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? description = null,Object? input = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? year = null,Object? day = null,Object? description = null,Object? input = null,}) {
   return _then(_Puzzle(
-description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+year: null == year ? _self.year : year // ignore: cast_nullable_to_non_nullable
+as int,day: null == day ? _self.day : day // ignore: cast_nullable_to_non_nullable
+as int,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,input: null == input ? _self.input : input // ignore: cast_nullable_to_non_nullable
 as String,
   ));
