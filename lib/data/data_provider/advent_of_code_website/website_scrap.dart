@@ -1,5 +1,5 @@
 import 'package:advent_of_code/CORE/data/http_data_provider.dart';
-import 'package:advent_of_code/data/interceptor/interceptor_provider.dart';
+import 'package:advent_of_code/data/interceptor/interceptors.dart';
 import 'package:html/parser.dart';
 
 part 'dto.dart';
@@ -26,7 +26,7 @@ final class AdventOfCodeWebsiteDataProvider extends HttpDataProvider {
 
   Future<AdventOfCodeWebsite_getInput_response> getInput({ required int year, required int day }) =>
       get('/$year/day/$day/input',
-        interceptors: [InterceptorProvider.authentication]
+        interceptors: [Interceptors.authentication]
       )
       .then((response) {
         final document = parse(response.data);

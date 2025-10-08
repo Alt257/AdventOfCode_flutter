@@ -1,4 +1,4 @@
-import 'package:advent_of_code/data/provider/advent_of_code_website/website_scrap.dart';
+import 'package:advent_of_code/data/data_provider/advent_of_code_website/website_scrap.dart';
 import 'package:advent_of_code/dotenv.dart';
 import 'package:flutter_test/flutter_test.dart';
 

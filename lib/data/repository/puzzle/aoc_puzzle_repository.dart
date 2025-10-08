@@ -5,8 +5,8 @@ import 'package:advent_of_code/entity/puzzle/puzzle.dart';
 final class AocPuzzleRepository implements IPuzzleRepository {
   final AdventOfCodeWebsiteDataProvider _aocWebsite;
   const AocPuzzleRepository({
-    required AdventOfCodeWebsiteDataProvider aocWebsite
-  }) : _aocWebsite = aocWebsite;
+    required AdventOfCodeWebsiteDataProvider aocWebsiteDataProvider
+  }) : _aocWebsite = aocWebsiteDataProvider;
 
   @override
   Future<Puzzle> find({required int year, required int day}) async {

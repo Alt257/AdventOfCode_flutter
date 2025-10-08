@@ -3,9 +3,10 @@ import 'package:advent_of_code/dotenv.dart';
 
 import 'authentication.dart';
 
-sealed class InterceptorProvider {
+sealed class Interceptors {
 
   static get authentication => InstanceProvider.getInstance(() =>
-      AuthInterceptor(Environment.read('COOCKIE_SESSION')));
+      AuthInterceptor(Environment.read('COOCKIE_SESSION'))
+  );
 
 }
