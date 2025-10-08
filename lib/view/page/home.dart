@@ -18,7 +18,7 @@ final class HomePage extends StatelessWidget {
           maxCrossAxisExtent: 100,
           mainAxisSpacing: 20,
           crossAxisSpacing: 20,
-          children: [for(var i = 1; i <= 25; i++) _buildPuzzleButton(context, year: 2025, day: i)],
+          children: [for(var i = 1; i <= 25; i++) _buildPuzzleButton(context, year: 2024, day: i)],
         ),
       ),
     ));
@@ -26,6 +26,6 @@ final class HomePage extends StatelessWidget {
 
   _buildPuzzleButton(BuildContext context, {required int year, required int day}) => ElevatedButton(
     onPressed: () => context.go('/puzzle?year=$year&day=$day'),
-    child: Text('$year day $day'),
+    child: Text('$year jour $day'),
   );
 }

@@ -19,11 +19,21 @@ final class PuzzlePage extends StatelessWidget {
 
         loading: (state) => const CircularProgressIndicator(),
 
-        loadError: (state) => Center(child: Text(state.message)),
+        loadError: (state) => Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          spacing: 20,
+          children: [
+            Text(state.message),
+            ElevatedButton(
+              onPressed: () => context.go('/home'),
+              child: Text('Retour'),
+            ),
+          ], 
+        ),
 
         loadSuccess: (state) => SafeArea(child: Scaffold(
           appBar: AppBar(
-            title: Text('${state.puzzle.year}/${state.puzzle.day}'),
+            title: Text('${state.puzzle.year} jour ${state.puzzle.day}'),
             centerTitle: true,
             leading: IconButton(onPressed: () => context.go('/home'), icon: Icon(Icons.arrow_back)),
           ),

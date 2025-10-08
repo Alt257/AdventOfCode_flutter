@@ -1,6 +1,7 @@
 import 'package:advent_of_code/data/repository/puzzle/i_puzzle_repository.dart';
 import 'package:advent_of_code/entity/puzzle/puzzle.dart';
 import 'package:bloc/bloc.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'puzzle_bloc.freezed.dart';
@@ -25,7 +26,8 @@ class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
           ),
         ));
       } catch(e) {
-        emit(PuzzleState.loadError('impossible de charger le puzzle ${event.year} jour ${event.day}'));
+        debugPrint('$e');
+        emit(PuzzleState.loadError('impossible de charger l\'année ${event.year} jour ${event.day}'));
       }
     });
   }
