@@ -7,6 +7,11 @@ final class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
+      appBar: AppBar(
+        title: Text('Advent Of Code'),
+        centerTitle: true,
+      ),
+
       body: Center(
         child: Column(
           children: [

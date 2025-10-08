@@ -6,7 +6,10 @@ final class PuzzlePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
-      appBar: AppBar(title: Text('year/day'),),
+      appBar: AppBar(
+        title: Text('year/day'),
+        centerTitle: true,
+      ),
 
       body: Center(
         child: Text('puzzle description'),

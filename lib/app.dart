@@ -1,4 +1,5 @@
 import 'package:advent_of_code/bloc_provider.dart';
+import 'package:advent_of_code/theme.dart';
 import 'package:flutter/material.dart';
 
 import 'router.dart';
@@ -12,9 +13,7 @@ class App extends StatelessWidget {
       child: MaterialApp.router(
         title: 'Flutter Demo',
         routerConfig: AppRouter().config,
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        ),
+        theme: AppTheme.dark,
       ),
     );
   }
