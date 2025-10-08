@@ -29,9 +29,9 @@ void main() {
   //   expect(find.text('1'), findsOneWidget);
   // });
 
-  testWidgets('COUCOU', (WidgetTester tester) async {
+  testWidgets('title', (WidgetTester tester) async {
     await tester.pumpWidget(const App());
 
-    expect(find.text('COUCOU!!'), findsOneWidget);
+    expect(find.text('Advent Of Code'), findsOneWidget);
   });
 }

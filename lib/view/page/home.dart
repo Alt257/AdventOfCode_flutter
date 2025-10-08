@@ -17,7 +17,6 @@ final class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           spacing: 36,
           children: [
-            Text('COUCOU!!'),
             ElevatedButton(
               onPressed: () => context.go('/puzzle?year=2025&day=1'),
               child: Text('2025 day 1'),
