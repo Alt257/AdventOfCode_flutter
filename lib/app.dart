@@ -1,3 +1,4 @@
+import 'package:advent_of_code/bloc_provider.dart';
 import 'package:flutter/material.dart';
 
 import 'router.dart';
@@ -7,11 +8,13 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Flutter Demo',
-      routerConfig: AppRouter().config,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    return AppBlocProvider(
+      child: MaterialApp.router(
+        title: 'Flutter Demo',
+        routerConfig: AppRouter().config,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        ),
       ),
     );
   }
