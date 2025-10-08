@@ -14,6 +14,8 @@ final class HomePage extends StatelessWidget {
 
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          spacing: 36,
           children: [
             Text('COUCOU!!'),
             ElevatedButton(
