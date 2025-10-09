@@ -8,13 +8,15 @@ final class BackToHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        spacing: 36,
-        children: [
-          if (message != null) Text(message!),
-          ElevatedButton(onPressed: () => context.go('/home'), child: Text('Retour')),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          spacing: 36,
+          children: [
+            if (message != null) Text(message!),
+            ElevatedButton(onPressed: () => context.go('/home'), child: Text('Retour')),
+          ],
+        ),
       ),
     ));
   }
