@@ -26,6 +26,12 @@ final class HomePage extends StatelessWidget {
 
   _buildPuzzleButton(BuildContext context, {required int year, required int day}) => ElevatedButton(
     onPressed: () => context.go('/puzzle?year=$year&day=$day'),
-    child: Text('$year jour $day'),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text('$year'),
+        Text('jour $day'),
+      ],
+    ),
   );
 }
