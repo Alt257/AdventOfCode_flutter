@@ -12,7 +12,7 @@ class App extends StatelessWidget {
     return AppBlocProvider(
       child: MaterialApp.router(
         title: 'Flutter Demo',
-        routerConfig: AppRouter().config,
+        routerConfig: AppRouter.config,
         theme: AppTheme.dark,
       ),
     );

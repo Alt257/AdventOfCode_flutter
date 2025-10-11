@@ -4,8 +4,8 @@ import 'package:advent_of_code/view/page/puzzle/puzzle_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-final class AppRouter {
-  final config = GoRouter(
+sealed class AppRouter {
+  static final config = GoRouter(
     debugLogDiagnostics: true,
     initialLocation: '/home',
 

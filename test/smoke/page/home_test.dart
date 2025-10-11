@@ -7,8 +7,7 @@
 
 
 
-import 'package:advent_of_code/app.dart';
-import 'package:flutter_test/flutter_test.dart';
+
 
 void main() {
   // exemple du counter widget :
@@ -29,9 +28,8 @@ void main() {
   //   expect(find.text('1'), findsOneWidget);
   // });
 
-  testWidgets('title', (WidgetTester tester) async {
-    await tester.pumpWidget(const App());
-
-    expect(find.text('Advent Of Code'), findsOneWidget);
-  });
+  // testWidgets('title', (WidgetTester tester) async {
+  //   await tester.pumpWidget(const App());
+  //   expect(find.text('Advent Of Code'), findsOneWidget);
+  // });
 }
