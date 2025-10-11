@@ -32,7 +32,7 @@ final class PuzzlePage extends StatelessWidget {
 
     body: SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(18),
         child: Center(
           child: Text(puzzle.description),
         ),
