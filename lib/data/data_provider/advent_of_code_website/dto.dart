@@ -1,16 +1,16 @@
-part of 'website_scrap.dart';
+part of 'advent_of_code_website.dart';
 
 
-final class AdventOfCodeWebsite_getDescription_response {
-  final String description;
-  const AdventOfCodeWebsite_getDescription_response({
-    required this.description,
-  });
-}
+@freezed
+sealed class AdventOfCodeWebsiteResponse with _$AdventOfCodeWebsiteResponse {
 
-final class AdventOfCodeWebsite_getInput_response {
-  final String input;
-  const AdventOfCodeWebsite_getInput_response({
-    required this.input,
-  });
+  const factory AdventOfCodeWebsiteResponse.getDescription({
+    required String description,
+  }) = AdventOfCodeWebsite_GetDescriptionResponse;
+
+
+  const factory AdventOfCodeWebsiteResponse.getInput({
+    required String input,
+  }) = AdventOfCodeWebsite_GetInputResponse;
+
 }
