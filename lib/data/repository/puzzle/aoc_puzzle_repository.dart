@@ -9,12 +9,13 @@ final class AocPuzzleRepository implements IPuzzleRepository {
   }) : _aocWebsite = aocWebsiteDataProvider;
 
   @override
-  Future<Puzzle> find({required int year, required int day}) async {
+  Future<Puzzle> find({required int year, required int day, required int part}) async {
     final getDescriptionResponse = await _aocWebsite.getDescription(year: year, day: day);
     final getInputResponse = await _aocWebsite.getInput(year: year, day: day);
     return Puzzle(
       year: year,
       day: day,
+      part: part,
       description: getDescriptionResponse.description,
       input: getInputResponse.input,
     );

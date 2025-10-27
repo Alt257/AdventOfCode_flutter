@@ -23,6 +23,7 @@ class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
           puzzle: await _puzzleRepository.find(
             year: event.year,
             day: event.day,
+            part: 1,
           ),
         ));
       } catch(e) {

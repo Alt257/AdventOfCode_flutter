@@ -7,6 +7,7 @@ abstract class Puzzle with _$Puzzle {
   const factory Puzzle({
     required int year,
     required int day,
+    required int part,
     required String description,
     required String input,
   }) = _Puzzle;
