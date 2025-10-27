@@ -1,6 +1,6 @@
 import 'package:advent_of_code/entity/puzzle/puzzle.dart';
 import 'package:advent_of_code/view/component/loading_page.dart';
-import 'package:advent_of_code/view/page/back_to_home.dart';
+import 'package:advent_of_code/view/page/error.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -16,9 +16,9 @@ final class PuzzlePage extends StatelessWidget {
     return BlocBuilder<PuzzleBloc, PuzzleState>(
 
       builder: (context, state) => state.map(
-        initial: (state) => BackToHomePage(message: 'Erreur dans le toaster !!'),
+        initial: (state) => ErrorPage(message: 'Erreur dans le toaster !!'),
         loading: (state) => LoadingPage(),
-        loadError: (state) => BackToHomePage(message: state.message),
+        loadError: (state) => ErrorPage(message: state.message),
         loadSuccess: (state) => _buildPage(context, state.puzzle),
       ),
     );

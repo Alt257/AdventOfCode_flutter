@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-final class BackToHomePage extends StatelessWidget {
-  const BackToHomePage({super.key, this.message});
+final class ErrorPage extends StatelessWidget {
+  const ErrorPage({super.key, this.message});
   final String? message;
 
   @override
