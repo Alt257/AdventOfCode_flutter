@@ -4,6 +4,7 @@ import 'package:advent_of_code/view/page/back_to_home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'puzzle_bloc.dart';
 
@@ -34,7 +35,7 @@ final class PuzzlePage extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(18),
         child: Center(
-          child: Text(puzzle.description),
+          child: Text(puzzle.description, style: GoogleFonts.azeretMono()),
         ),
       ),
     ),
